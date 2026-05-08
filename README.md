@@ -142,10 +142,9 @@ Key settings include video port, audio sink, theme, accent colour, DVR directory
 
 ## Origins
 
-Carputer was built by gutting and rebuilding [Godseye](https://github.com/devkid/godseye) — an FPV drone ground station app — repurposing its Buildroot environment, Qt5/QML architecture, and GStreamer pipeline patterns for automotive use. Most of the hard Buildroot and toolchain work was inherited from that project.
-
+Carputer was built for replacing broken modules in my old toyota just project is just fun and i like the fact i can just build what i want .... 
 ---
 
 ## License
 
-MIT
+
