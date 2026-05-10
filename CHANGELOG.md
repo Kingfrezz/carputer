@@ -1,5 +1,14 @@
 # Carputer Changelog
 
+## Version 1.6.1 (2026-05-10)
+
+### Maintenance Release
+
+- Bumped application version metadata to `1.6.1` for release packaging and update checks.
+- General maintenance and release preparation updates.
+
+---
+
 ## Version 1.2 (2026-04-14)
 
 ### Apple CarPlay Integration
