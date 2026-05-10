@@ -18,6 +18,16 @@ Item {
                 height: 60;
                 color: themeManager.bgCard;
                 radius: 8;
+                border.width: 1
+                border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.30)
+                Rectangle {
+                    anchors.fill: parent
+                    radius: parent.radius
+                    gradient: Gradient {
+                        GradientStop { position: 0.0; color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.14) }
+                        GradientStop { position: 0.5; color: "transparent" }
+                    }
+                }
                 Text {
                     anchors.centerIn: parent;
                     text: "MEDIA PLAYER";
@@ -57,6 +67,8 @@ Item {
                 height: 380;
                 color: themeManager.bgCard;
                 radius: 8;
+                border.width: 1
+                border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.22)
                 Column {
                     anchors.fill: parent;
                     anchors.margins: 15;
@@ -79,6 +91,8 @@ Item {
                             height: 80
                             radius: 6
                             color: themeManager.bgDark
+                            border.width: 1
+                            border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.25)
                             clip: true
 
                             Image {
@@ -140,6 +154,8 @@ Item {
                         height: 70
                         color: themeManager.bgDark
                         radius: 6
+                        border.width: 1
+                        border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.18)
                         clip: true
                         Row {
                             anchors {

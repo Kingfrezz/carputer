@@ -16,12 +16,28 @@ Item {
                 anchors.right: parent.right
                 anchors.margins: 20
                 spacing: 15
-                Text {
-                    text: "SETTINGS"
-                    color: themeManager.carBlue
-                    font.pixelSize: 24
-                    font.bold: true
-                    Layout.alignment: Qt.AlignHCenter
+                Rectangle {
+                    Layout.fillWidth: true
+                    Layout.preferredHeight: 58
+                    color: themeManager.bgCard
+                    radius: 10
+                    border.width: 1
+                    border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.30)
+                    Rectangle {
+                        anchors.fill: parent
+                        radius: parent.radius
+                        gradient: Gradient {
+                            GradientStop { position: 0.0; color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.14) }
+                            GradientStop { position: 0.6; color: "transparent" }
+                        }
+                    }
+                    Text {
+                        anchors.centerIn: parent
+                        text: "SETTINGS"
+                        color: themeManager.carBlue
+                        font.pixelSize: 24
+                        font.bold: true
+                    }
                 }
                 // Theme Section
                 Rectangle {
@@ -29,6 +45,8 @@ Item {
                     height: themeColumn.implicitHeight + 20
                     color: themeManager.bgCard
                     radius: 8
+                    border.width: 1
+                    border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.22)
                     Column {
                         id: themeColumn
                         anchors.left: parent.left
@@ -120,6 +138,8 @@ Item {
                     height: wifiColumn.implicitHeight + 20
                     color: themeManager.bgCard
                     radius: 8
+                    border.width: 1
+                    border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.22)
                     Column {
                         id: wifiColumn
                         anchors.left: parent.left
@@ -212,6 +232,8 @@ Item {
                     height: controllerColumn.implicitHeight + 20
                     color: themeManager.bgCard
                     radius: 8
+                    border.width: 1
+                    border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.22)
                     Column {
                         id: controllerColumn
                         anchors.left: parent.left
@@ -232,6 +254,8 @@ Item {
                     height: sensorColumn.implicitHeight + 20
                     color: themeManager.bgCard
                     radius: 8
+                    border.width: 1
+                    border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.22)
                     Column {
                         id: sensorColumn
                         anchors.left: parent.left
@@ -264,6 +288,8 @@ Item {
                     height: powerColumn.implicitHeight + 20
                     color: themeManager.bgCard
                     radius: 8
+                    border.width: 1
+                    border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.22)
                     Column {
                         id: powerColumn
                         anchors.left: parent.left
@@ -295,6 +321,8 @@ Item {
                     height: installColumn.implicitHeight + 20
                     color: themeManager.bgCard
                     radius: 8
+                    border.width: 1
+                    border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.22)
                     Column {
                         id: installColumn
                         anchors.left: parent.left
@@ -396,6 +424,8 @@ Item {
                     height: updateColumn.implicitHeight + 20
                     color: themeManager.bgCard
                     radius: 8
+                    border.width: 1
+                    border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.22)
                     Column {
                         id: updateColumn
                         anchors.left: parent.left
