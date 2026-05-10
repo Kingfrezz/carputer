@@ -95,7 +95,9 @@ Item {
             Layout.fillWidth: true
             Layout.preferredHeight: 36
             color: themeManager.bgCard
-            radius: 6
+            radius: 8
+            border.width: 1
+            border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.25)
             RowLayout {
                 anchors.fill: parent
                 anchors.leftMargin: 12
@@ -227,6 +229,18 @@ Item {
                 color: themeManager.bgCard
                 radius: 10
                 clip: true
+                border.width: 1
+                border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.28)
+
+                Rectangle {
+                    anchors.fill: parent
+                    radius: parent.radius
+                    gradient: Gradient {
+                        GradientStop { position: 0.0; color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.08) }
+                        GradientStop { position: 0.35; color: "transparent" }
+                        GradientStop { position: 1.0; color: "transparent" }
+                    }
+                }
 
                 MouseArea {
                     anchors.fill: parent
@@ -532,6 +546,8 @@ Item {
             Layout.preferredHeight: 90
             color: themeManager.bgCard
             radius: 6
+            border.width: 1
+            border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.22)
             RowLayout {
                 anchors.fill: parent
                 anchors.margins: 8
@@ -541,6 +557,8 @@ Item {
                 Rectangle {
                     Layout.preferredWidth: 260; Layout.fillHeight: true
                     color: themeManager.bgDark; radius: 6
+                    border.width: 1
+                    border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.18)
                     ColumnLayout {
                         anchors.fill: parent; anchors.margins: 6; spacing: 4
                         Text { text: "CLIMATE"; color: themeManager.textSecondary; font.pixelSize: 9 }
@@ -569,6 +587,8 @@ Item {
                 Rectangle {
                     Layout.preferredWidth: 200; Layout.fillHeight: true
                     color: themeManager.bgDark; radius: 6
+                    border.width: 1
+                    border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.18)
                     ColumnLayout {
                         anchors.fill: parent; anchors.margins: 6; spacing: 4
                         Text { text: "FAN"; color: themeManager.textSecondary; font.pixelSize: 9 }
@@ -599,6 +619,8 @@ Item {
                 Rectangle {
                     Layout.preferredWidth: 200; Layout.fillHeight: true
                     color: themeManager.bgDark; radius: 6
+                    border.width: 1
+                    border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.18)
                     RowLayout {
                         anchors.fill: parent; anchors.margins: 6; spacing: 4
                         Button {
@@ -626,6 +648,8 @@ Item {
                 Rectangle {
                     Layout.preferredWidth: 260; Layout.fillHeight: true
                     color: themeManager.bgDark; radius: 6
+                    border.width: 1
+                    border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.18)
                     RowLayout {
                         anchors.fill: parent; anchors.margins: 6; spacing: 4
                         Button {
@@ -655,6 +679,13 @@ Item {
                     color: remoteStartActive ? "#331100" : themeManager.bgDark
                     radius: 6; border.color: remoteStartActive ? themeManager.carOrange : "transparent"
                     border.width: remoteStartActive ? 1 : 0
+                    Rectangle {
+                        anchors.fill: parent
+                        radius: parent.radius
+                        color: "transparent"
+                        border.width: remoteStartActive ? 0 : 1
+                        border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.18)
+                    }
                     ColumnLayout {
                         anchors.centerIn: parent; spacing: 2
                         Text {

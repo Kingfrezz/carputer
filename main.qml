@@ -15,6 +15,7 @@ Window {
     }
     property int activePage: 1
     property bool menuVisible: true
+    property int hoveredNavPage: -1
     onActivePageChanged: {
         configManager.lastPage = activePage
         Qt.callLater(function() {
@@ -52,12 +53,17 @@ Window {
         Rectangle {
             id: bottomBar
             anchors { left: parent.left; right: parent.right; bottom: parent.bottom }
-            height: 90
-            color: themeManager.bgPanel
-            border.color: themeManager.carBlueDim
+            height: 96
+            color: Qt.rgba(themeManager.bgPanel.r, themeManager.bgPanel.g, themeManager.bgPanel.b, 0.95)
+            border.color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.35)
             border.width: 1
             visible: root.menuVisible
             z: 100
+            Rectangle {
+                anchors { left: parent.left; right: parent.right; top: parent.top }
+                height: 1
+                color: Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.5)
+            }
             Row {
                 anchors.fill: parent
                 spacing: 0
@@ -73,7 +79,12 @@ Window {
                         Rectangle {
                         width: bottomBar.width / navRepeater.count
                         height: bottomBar.height
-                        color: root.activePage === modelData.page ? themeManager.carBlueDim : themeManager.transparent
+                        color: root.activePage === modelData.page
+                               ? Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.18)
+                               : root.hoveredNavPage === modelData.page
+                                 ? Qt.rgba(themeManager.carBlue.r, themeManager.carBlue.g, themeManager.carBlue.b, 0.10)
+                                 : themeManager.transparent
+                        Behavior on color { ColorAnimation { duration: 140 } }
                         // Top accent line for active tab
                         Rectangle {
                             anchors { top: parent.top; left: parent.left; right: parent.right }
@@ -87,7 +98,8 @@ Window {
                                 anchors.horizontalCenter: parent.horizontalCenter
                                 text: modelData.icon
                                 color: root.activePage === modelData.page ? themeManager.carBlue : themeManager.textSecondary
-                                font.pixelSize: 26
+                                font.pixelSize: root.activePage === modelData.page ? 28 : 24
+                                opacity: root.hoveredNavPage === modelData.page || root.activePage === modelData.page ? 1.0 : 0.85
                             }
                             Text {
                                 anchors.horizontalCenter: parent.horizontalCenter
@@ -96,13 +108,14 @@ Window {
                                 font.pixelSize: 12
                                 font.bold: root.activePage === modelData.page
                                 font.family: themeManager.fontFamily
+                                opacity: root.hoveredNavPage === modelData.page || root.activePage === modelData.page ? 1.0 : 0.9
                             }
                         }
                         MouseArea {
                             anchors.fill: parent
                             hoverEnabled: true
-                            onEntered: parent.color = themeManager.carBlueDim
-                            onExited: parent.color = (root.activePage === modelData.page ? themeManager.carBlueDim : themeManager.transparent)
+                            onEntered: root.hoveredNavPage = modelData.page
+                            onExited: if (root.hoveredNavPage === modelData.page) root.hoveredNavPage = -1
                             onClicked: root.activePage = modelData.page
                         }
                     }
