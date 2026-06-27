@@ -1,4 +1,6 @@
 # Carputer
+android app is ready will be integreade on esp32  with display the esp32 already handles all the logic already  .............qt is just my workshop for testing n developing code 
+
 
 A custom Qt5/QML in-car head unit application built for embedded Linux (Buildroot). Designed to run fullscreen on a dedicated car PC, providing media playback, real-time vehicle telemetry, climate control, and remote vehicle functions through a clean, themeable interface.
 
